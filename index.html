@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mesto</title>
+  </head>
+  <body class="root">
+    <div class="page">
+      <header class="header">
+        <img src="<%=require('./images/Logo.svg')%>" alt="логотип Mesto" class="header__logo">
+      </header>
+      <main class="content">
+        <section class="profile">
+          <div class="profile__avatar-container">
+            <img src="#" alt="фото профиля" class="profile__avatar">
+            <button type="button" class="profile__avatar-editbutton"></button>
+          </div>
+          <div class="profile__info">
+            <h1 class="profile__info-name"></h1>
+            <p class="profile__info-job"></p>
+            <button class="profile__edit-button" type="button"></button>
+          </div>
+          <button class="profile__button" type="button"></button>
+        </section>
+        <section class="photo-galery">
+          <ul class="elements"></ul>
+        </section>
+      </main>
+      <footer class="footer">
+        <p class="footer__copyright">&copy; 2023 Mesto Russia</p>
+      </footer>
+      <template class="elements-template">
+        <li class="element">
+          <img class="element__image" src="#" alt="#">
+          <button class="element__delete-button"></button>
+          <div class="element__container">
+            <h2 class="element__title"></h2>
+            <button class="element__button-like" type="button"></button>
+            <span class="element__counter-like"></span>
+          </div>
+        </li>
+      </template>
+      <div class="popup" id="edit-profile">
+        <form class="popup__form" name="profile-form" novalidate>
+          <button class="popup__close-button" type="button"></button>
+          <h3 class="popup__heading">Редактировать профиль</h3>
+          <input class="popup__input" type="text" name="username" id="firstname" placeholder="Имя Фамилия" minlength="2" maxlength="40" required>
+          <span class="popup__input-error" id="firstname-error"></span>
+          <input class="popup__input" type="text" name="job" id="job" placeholder="О себе" minlength="2" maxlength="200" required>
+          <span class="popup__input-error" id="job-error"></span>
+          <button class="popup__submit-button popup__submit-button_enabled" type="submit">Сохранить</button>
+        </form>
+      </div>
+      <div class="popup" id="edit-cards">
+        <form class="popup__form" name="cards-form" novalidate>
+          <button class="popup__close-button" type="button"></button>
+          <h3 class="popup__heading">Новое место</h3>
+          <input class="popup__input" type="text" name="title" id="object" placeholder="Название" minlength="2" maxlength="30" required>
+          <span class="popup__input-error" id="object-error"></span>
+          <input class="popup__input" type="url" name="link" id="link" placeholder="Ссылка на картинку" required>
+          <span class="popup__input-error" id="link-error"></span>
+          <button class="popup__submit-button" type="submit">Создать</button>
+        </form>
+      </div>
+      <div class="popup" id="open-image">
+        <div class="popup__card">
+          <img class="popup__image" src="#" alt="#">
+          <h4 class="popup__title"></h4>
+          <button class="popup__close-button" type="button"></button>
+        </div>
+      </div>
+      <div class="popup" id="edit-avatar">
+        <form class="popup__form" name="avatar-form" novalidate>
+          <button class="popup__close-button" type="button"></button>
+          <h3 class="popup__heading">Обновить аватар</h3>
+          <input class="popup__input" type="url" name="avatar" id="avatar" placeholder="Ссылка на фото" required>
+            <span class="popup__input-error" id="avatar-error"></span>
+          <button class="popup__submit-button popup__submit-button_enabled" type="submit">Сохранить</button>
+        </form>
+      </div>
+      <div class="popup" id="delete-popup">
+        <form class="popup__form" name="delete-form">
+          <button class="popup__close-button" type="button"></button>
+          <h3 class="popup__heading popup__heading_type_delete">Вы уверены?</h3>
+          <button class="popup__submit-button popup__submit-button_enabled" type="submit">Да</button>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>
